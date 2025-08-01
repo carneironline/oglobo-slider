@@ -1,20 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-    background: #fff;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    color: #fff;
-    margin: 0;
-    padding: 20px;
-}
-
-#app {
-    max-width: ;
-    margin: 0 auto;
-}
-
 .card {
     width: 234px;
     height: 402px;

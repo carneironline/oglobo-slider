@@ -2,6 +2,7 @@ import Swiper from 'swiper/bundle';
 import type { SwiperOptions } from 'swiper/types';
 
 import 'swiper/swiper-bundle.css';
+import './style.css';
 import './swiper.css';
 import './card.css';
 
