@@ -2,6 +2,10 @@
 
 Uma prova de conceito para um novo componente de carrossel destinado ao produto O Globo, desenvolvido com Vite, TypeScript e Swiper.js.
 
+## 🌐 Demo ao Vivo
+
+**[Ver Projeto Rodando ➜ https://oglobo-slider.vercel.app](https://oglobo-slider.vercel.app)**
+
 ## 🎯 Objetivo
 
 Este projeto serve como POC para avaliar e demonstrar um novo design de carrossel para ser implementado no produto O Globo. O componente foi desenvolvido com foco em:
