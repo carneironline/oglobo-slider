@@ -20,6 +20,7 @@ Este projeto serve como POC para avaliar e demonstrar um novo design de carrosse
 -   **[Vite](https://vitejs.dev/)** - Build tool e servidor de desenvolvimento
 -   **[TypeScript](https://www.typescriptlang.org/)** - Tipagem estática
 -   **[Swiper.js](https://swiperjs.com/)** - Biblioteca de carrossel moderna
+    -   📚 [Ver exemplos de uso ➜ https://swiperjs.com/demos](https://swiperjs.com/demos)
 -   **CSS3** - Estilização personalizada
 -   **HTML5** - Estrutura semântica
 
