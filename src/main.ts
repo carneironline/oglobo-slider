@@ -1,7 +1,7 @@
 import Swiper from 'swiper/bundle';
 import type { SwiperOptions } from 'swiper/types';
 
-import 'swiper/css/bundle';
+import 'swiper/swiper-bundle.css';
 import './swiper.css';
 import './card.css';
 
@@ -17,4 +17,4 @@ const swiperParams: SwiperOptions = {
     },
 };
 
-const swiper = new Swiper('.swiper', swiperParams);
+new Swiper('.swiper', swiperParams);
