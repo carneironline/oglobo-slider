@@ -9,11 +9,15 @@
 }
 
 .embla__controls {
-    display: grid;
+    display: none;
     grid-template-columns: 1fr;
     gap: 1.2rem;
     height: 14px;
     margin-top: 1.25rem;
+
+    @media (min-width: 1200px) {
+        display: grid;
+    }
 }
 
 .embla__dots {
