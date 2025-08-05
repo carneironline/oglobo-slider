@@ -4,11 +4,11 @@ import { addDotBtnsAndClickHandlers } from './EmblaCarouselDotButton';
 
 import './embla.css';
 
-const emblaNode = document.querySelector('.embla') as HTMLElement;
+const emblaNode = document.querySelector('.embla2') as HTMLElement;
 const viewportNode = emblaNode.querySelector('.embla__viewport') as HTMLElement;
 const dotsNode = emblaNode.querySelector('.embla__dots') as HTMLElement;
 
-const options: EmblaOptionsType = { loop: false, slidesToScroll: 'auto', duration: 60 };
+const options: EmblaOptionsType = { loop: false, slidesToScroll: 'auto', duration: 60, dragFree: true };
 
 if (emblaNode instanceof HTMLElement) {
     const emblaApi = EmblaCarousel(viewportNode, options);

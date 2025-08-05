@@ -4,3 +4,4 @@ import './card.css';
 
 import './carousel- swipe/swiper.js';
 import './carousel-embla/embla.js';
+import './carousel-embla2/embla.js';
