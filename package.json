@@ -10,9 +10,11 @@
     },
     "devDependencies": {
         "typescript": "~5.8.3",
-        "vite": "^7.0.4"
+        "vite": "^7.0.4",
+        "vite-plugin-handlebars": "^2.0.0"
     },
     "dependencies": {
+        "embla-carousel": "^8.6.0",
         "swiper": "^11.2.10"
     }
 }
