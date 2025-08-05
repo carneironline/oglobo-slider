@@ -8,7 +8,16 @@ const emblaNode = document.querySelector('.embla') as HTMLElement;
 const viewportNode = emblaNode.querySelector('.embla__viewport') as HTMLElement;
 const dotsNode = emblaNode.querySelector('.embla__dots') as HTMLElement;
 
-const options: EmblaOptionsType = { loop: false, slidesToScroll: 'auto', duration: 60, dragFree: true };
+const options: EmblaOptionsType = {
+    loop: false,
+    slidesToScroll: 'auto',
+    duration: 60,
+    dragFree: true,
+
+    breakpoints: {
+        '(min-width: 1200px)': { watchDrag: false },
+    },
+};
 
 if (emblaNode instanceof HTMLElement) {
     const emblaApi = EmblaCarousel(viewportNode, options);
