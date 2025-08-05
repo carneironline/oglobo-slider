@@ -1,6 +1,6 @@
 # GLB Slider - Prova de Conceito (POC)
 
-Uma prova de conceito para um novo componente de carrossel destinado ao produto O Globo, desenvolvido com Vite, TypeScript e Swiper.js.
+Uma prova de conceito para um novo componente de carrossel destinado ao produto O Globo, desenvolvido com Vite, TypeScript e comparando duas bibliotecas modernas: Swiper.js e Embla Carousel.
 
 ## 🌐 Demo ao Vivo
 
@@ -10,10 +10,11 @@ Uma prova de conceito para um novo componente de carrossel destinado ao produto 
 
 Este projeto serve como POC para avaliar e demonstrar um novo design de carrossel para ser implementado no produto O Globo. O componente foi desenvolvido com foco em:
 
--   **Performance**: Utilizando Swiper.js para navegação fluida
+-   **Performance**: Comparação entre Swiper.js e Embla Carousel
 -   **Responsividade**: Layout adaptável a diferentes tamanhos de tela
 -   **Acessibilidade**: Controles de navegação intuitivos
 -   **Moderna Stack**: TypeScript + Vite para desenvolvimento ágil
+-   **Análise Comparativa**: Dois carrosséis lado a lado para análise
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -21,6 +22,8 @@ Este projeto serve como POC para avaliar e demonstrar um novo design de carrosse
 -   **[TypeScript](https://www.typescriptlang.org/)** - Tipagem estática
 -   **[Swiper.js](https://swiperjs.com/)** - Biblioteca de carrossel moderna
     -   📚 [Ver exemplos de uso ➜ https://swiperjs.com/demos](https://swiperjs.com/demos)
+-   **[Embla Carousel](https://www.embla-carousel.com/)** - Carrossel leve e extensível
+    -   📚 [Ver documentação ➜ https://www.embla-carousel.com/get-started/](https://www.embla-carousel.com/get-started/)
 -   **CSS3** - Estilização personalizada
 -   **HTML5** - Estrutura semântica
 
@@ -71,29 +74,40 @@ npm run preview
 ```text
 glb-slider/
 ├── src/
-│   ├── main.ts          # Ponto de entrada e configuração do Swiper
-│   ├── swiper.css       # Estilos específicos do carrossel
-│   ├── card.css         # Estilos dos cards de conteúdo
-│   └── vite-env.d.ts    # Tipagens do Vite
-├── public/              # Arquivos estáticos
-├── index.html           # Template HTML principal
-├── package.json         # Dependências e scripts
-├── tsconfig.json        # Configuração do TypeScript
-└── README.md           # Este arquivo
+│   ├── carousel-swipe/
+│   │   └── swiper.js        # Implementação com Swiper.js
+│   ├── carousel-embla/
+│   │   └── embla.js         # Implementação com Embla Carousel
+│   ├── main.ts              # Ponto de entrada principal
+│   ├── style.css            # Estilos globais
+│   ├── card.css             # Estilos dos cards de conteúdo
+│   └── vite-env.d.ts        # Tipagens do Vite
+├── public/                  # Arquivos estáticos
+├── index.html               # Template HTML principal
+├── package.json             # Dependências e scripts
+├── tsconfig.json            # Configuração do TypeScript
+└── README.md               # Este arquivo
 ```
 
-## ⚙️ Configuração do Carrossel
+## 🔄 Comparação de Bibliotecas
 
-O carrossel está configurado com as seguintes características:
+### Swiper.js
 
--   **slidesPerView**: `'auto'` - Slides com largura automática
--   **spaceBetween**: `16px` - Espaçamento entre slides
--   **centeredSlides**: `false` - Slides alinhados à esquerda
--   **pagination**: Paginação clicável com bullets dinâmicos
+-   **Peso**: ~50KB minificado
+-   **Características**: Rico em features, API robusta
+-   **Configuração**: Mais opções built-in
+-   **Performance**: Excelente para casos complexos
 
-### Personalização
+### Embla Carousel
 
-Para modificar o comportamento do carrossel, edite o arquivo `src/main.ts`:
+-   **Peso**: ~15KB minificado
+-   **Características**: Leve, modular, extensível
+-   **Configuração**: Minimalista e flexível
+-   **Performance**: Otimizado para performance
+
+## ⚙️ Configuração dos Carrosséis
+
+### Swiper Configuration
 
 ```typescript
 const swiperParams: SwiperOptions = {
@@ -105,7 +119,16 @@ const swiperParams: SwiperOptions = {
         clickable: true,
         dynamicBullets: true,
     },
-    // Adicione suas configurações aqui
+};
+```
+
+### Embla Configuration
+
+```typescript
+const emblaOptions = {
+    align: 'start',
+    containScroll: 'trimSnaps',
+    dragFree: true,
 };
 ```
 
@@ -120,11 +143,19 @@ Cada slide contém um card estruturado com:
 -   **Descrição**: Texto descritivo
 -   **Botões de Ação**: "Inscrever" e "Preview"
 
-### Paginação
+### Controles de Navegação
 
--   Bullets circulares customizados (14x14px)
--   Estado ativo destacado em azul (#007aff)
--   Posicionamento estático abaixo do carrossel
+#### Swiper.js
+
+-   Paginação com bullets dinâmicos
+-   Navegação por toque/arraste
+-   Scroll automático responsivo
+
+#### Embla Carousel
+
+-   Navegação por toque/arraste otimizada
+-   Scroll livre (drag free)
+-   Performance otimizada para mobile
 
 ## 🎨 Estilos
 
@@ -140,15 +171,15 @@ Cada slide contém um card estruturado com:
 -   **Card**: 234px × 402px
 -   **Border-radius**: 10px
 -   **Espaçamento**: 16px entre slides
--   **Gap**: 20px entre carrossel e paginação
+-   **Gap**: 20px entre seções
 
 ## 📱 Responsividade
 
-O carrossel é responsivo e se adapta automaticamente:
+Ambos os carrosséis são responsivos e se adaptam automaticamente:
 
--   Slides com largura automática (`slidesPerView: 'auto'`)
+-   Slides com largura automática
 -   Layout flexível que se ajusta ao container pai
--   Paginação centralizada e responsiva
+-   Otimização para diferentes dispositivos
 
 ## 🔧 Scripts Disponíveis
 
@@ -158,15 +189,43 @@ O carrossel é responsivo e se adapta automaticamente:
 | `npm run build`   | Gera build otimizado para produção |
 | `npm run preview` | Visualiza a build de produção      |
 
+## 📊 Análise Comparativa
+
+### Quando usar Swiper.js:
+
+-   Projetos que precisam de muitas features built-in
+-   Casos que requerem paginação complexa
+-   Necessidade de efeitos visuais avançados
+
+### Quando usar Embla Carousel:
+
+-   Performance crítica (mobile-first)
+-   Bundle size é uma preocupação
+-   Necessidade de customização total
+-   Projetos que valorizam simplicidade
+
 ## 📈 Próximos Passos
 
 Esta POC serve como base para discussões sobre:
 
-1. **Integração**: Como incorporar no ambiente de produção do O Globo
-2. **Customização**: Ajustes visuais e de comportamento
-3. **Performance**: Otimizações específicas para o contexto de uso
-4. **Acessibilidade**: Melhorias para atender padrões WCAG
-5. **Testes**: Implementação de testes unitários e de integração
+1. **Escolha da Biblioteca**: Decidir entre Swiper.js ou Embla baseado nos resultados
+2. **Integração**: Como incorporar no ambiente de produção do O Globo
+3. **Customização**: Ajustes visuais e de comportamento específicos
+4. **Performance**: Testes de performance em diferentes dispositivos
+5. **Acessibilidade**: Melhorias para atender padrões WCAG
+6. **Testes**: Implementação de testes unitários e de integração
+
+## 🧪 Testes de Performance
+
+Para testar performance entre as duas bibliotecas:
+
+1. Abra o DevTools do navegador
+2. Vá para a aba Performance
+3. Compare métricas de:
+    - First Paint
+    - Time to Interactive
+    - Bundle Size
+    - Memory Usage
 
 ## 🤝 Contribuição
 
@@ -186,4 +245,4 @@ Este projeto é uma prova de conceito interna para O Globo.
 
 **Desenvolvido por**: [Rodrigo Carneiro | @carneironline](https://github.com/carneironline)  
 **Versão**: 0.0.0  
-**Status**: Prova de Conceito
+**Status**: Prova de Conceito - Análise Comparativa
